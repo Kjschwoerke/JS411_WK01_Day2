@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  color: #312517;
+}
+
+.App {
+  text-align: center;
+  background: #fffef9; /* Old browsers */
+  background: -moz-linear-gradient(top,  #fffef9 0%, #c9c190 50%, #b7ad70 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #fffef9 0%,#c9c190 50%,#b7ad70 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #fffef9 0%,#c9c190 50%,#b7ad70 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffef9', endColorstr='#b7ad70',GradientType=0 ); /* IE6-9 */
+  padding: 2em;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3em;
+  font-weight: 900;
+  margin-bottom: .5em;
+}
+
+#beerListContainer {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  background: #ffffff;
+  border: black solid 2px;
+  border-radius: 10px;
+}
+
+#beerItem {
+  background: #dbd4a9;
+  border: black solid 1px;
+  margin: 1em;
+  padding: .5em;
+  list-style: none;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+#likeBeer {
+  margin-top: .5em;
+  padding: 0.5rem;
+  border: black solid 1px;
+  font-weight: 600;
+  border-radius: 10px;
+  
+}
+
+#abv {
+  font-size: 1.25rem;
+}
+
+#description {
+  background: #ffffff;
+  border: solid black 1px;
+  border-radius: 10px;
+  margin-top: 12px;
+  padding: 1em;
+  font-family: 'Raleway', sans-serif;
+}
+
+#firstBrew {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+#tagline {
+  font-style: oblique;
+}
