@@ -7,7 +7,7 @@ class App extends Component {
     super(props)
     this.state = {
       items: [],
-      isLoaded: false,
+      isLiked: false,
     }
   }
 
@@ -23,16 +23,17 @@ class App extends Component {
 
   }
 
-  likedBeer(e) {
-  console.log("you have liked the beer: " + e)
+  likedBeer(id, name) {
+    console.log("You have liked the beer with the id of " +id +' & the name of '+ name)
   }
 
 render(){
 
     const {items} = this.state
-      console.log(items)
+      //console.log(items)
 
     return (
+      
       <div className = "App">
         <h1>All the Beers!</h1>
         <ul id='beerListContainer'>
@@ -48,7 +49,9 @@ render(){
             <br/>
             <span id="tagline">{item.tagline}</span>
             <br/><br/>
-            <button onClick = {this.likedBeer} id="likeBeer">Click to like the "{item.name}" beer!</button>
+            <div><b></b></div>
+            <button onClick = {(e) => this.likedBeer(item.id, item.name)} id="likeBeer">Click to like the "{item.name}" beer!</button>
+            
             </li>
           ))}
         </ul>
