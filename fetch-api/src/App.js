@@ -7,7 +7,7 @@ class App extends Component {
     super(props)
     this.state = {
       items: [],
-      isLiked: false,
+      isLiked: [],
     }
   }
 
@@ -22,15 +22,24 @@ class App extends Component {
     })
 
   }
-
-  likedBeer(id, name) {
-    console.log("You have liked the beer with the id of " +id +' & the name of '+ name)
+  //create a like beer feature for onClick event.
+  
+  
+  LikedBeer(name) {
+    let items = this.state.items
+    let beers = items
+    if (this.state.isLiked === "No") {this.setState({isLiked: "Yes"})}
+    else {this.setState({isLiked: "No"})}
+    const beerID = (beer) => beer.name == name
+    let beerFound = beers.findIndex(beerID)
+    console.log(beerFound)
   }
 
 render(){
 
     const {items} = this.state
-      //console.log(items)
+      //console.log(items.name)
+      console.log(this.state.isLiked)
 
     return (
       
@@ -49,9 +58,11 @@ render(){
             <br/>
             <span id="tagline">{item.tagline}</span>
             <br/><br/>
-            <div><b></b></div>
-            <button onClick = {(e) => this.likedBeer(item.id, item.name)} id="likeBeer">Click to like the "{item.name}" beer!</button>
-            
+
+            <div><b>You have liked the "{item.name}: {this.state.isLiked}</b></div>
+
+            <button onClick = {() => this.LikedBeer(item.name)} id="likeBeer">Click to like the "{item.name}" beer!</button>
+            {/* (e) => this.likedBeer(item.id, item.name) */}
             </li>
           ))}
         </ul>
