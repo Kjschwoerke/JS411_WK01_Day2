@@ -12,18 +12,6 @@ class Beer extends React.Component {
         if (isLiked) {
         this.setState({Liked: 'Yes'}) 
         }else{this.setState({Liked: 'No'})}
-
-        // let items = this.state.items
-        // for(let i = 0; i<items.length; i++){
-        //   items[i].isLiked = "No"}
-        // let beers = items
-        // const beerID = (beer) => beer.name === name
-        // let beerFound = beers.findIndex(beerID)
-    
-        // if (beers[beerFound].isLiked === "No"){beers[beerFound].isLiked = "Yes"} else {beers[beerFound].isLiked = "No"}
-        // this.setState({beers})
-    
-        // console.log(beers)
       }
 
 render(){
