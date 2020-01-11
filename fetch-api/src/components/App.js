@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import './App.css';
+import '../App.css';
+
 
 class App extends Component {
 
@@ -27,19 +28,23 @@ class App extends Component {
   
   LikedBeer(name) {
     let items = this.state.items
+    for(let i = 0; i<items.length; i++){
+      items[i].isLiked = "No"}
     let beers = items
-    if (this.state.isLiked === "No") {this.setState({isLiked: "Yes"})}
-    else {this.setState({isLiked: "No"})}
-    const beerID = (beer) => beer.name == name
+    const beerID = (beer) => beer.name === name
     let beerFound = beers.findIndex(beerID)
-    console.log(beerFound)
+
+    if (beers[beerFound].isLiked === "No"){beers[beerFound].isLiked = "Yes"} else {beers[beerFound].isLiked = "No"}
+    this.setState({beers})
+
+    console.log(beers)
   }
 
 render(){
 
     const {items} = this.state
       //console.log(items.name)
-      console.log(this.state.isLiked)
+      //console.log(this.state.isLiked)
 
     return (
       
@@ -47,6 +52,14 @@ render(){
         <h1>All the Beers!</h1>
         <ul id='beerListContainer'>
           {items.map(item => (
+            // <Beer 
+            // id={item.id}
+            // name={item.name}
+            // abv={item.abv}
+            // description={item.description}
+            // firstBrew={item.firstBrew}
+            // tagline={item.tagline}
+            // />
             <li id='beerItem' key = {item.id}>
             <h2>"{item.name}"</h2>
             <br/>
@@ -59,7 +72,7 @@ render(){
             <span id="tagline">{item.tagline}</span>
             <br/><br/>
 
-            <div><b>You have liked the "{item.name}: {this.state.isLiked}</b></div>
+          <div><b>You have liked the "{item.name}: {item.isLiked}</b></div>
 
             <button onClick = {() => this.LikedBeer(item.name)} id="likeBeer">Click to like the "{item.name}" beer!</button>
             {/* (e) => this.likedBeer(item.id, item.name) */}
